@@ -7,7 +7,8 @@ class App extends Component {
       <div className="App">
         <h1>My first React App!</h1>
         <p>Welcome my friend :)</p>
-        <Ninjas />
+        <Ninjas name="Justin" age="16" belt="pink"/>
+        <Ninjas name="Chuck" age="99" belt="black"/>
       </div>
     );
   }
