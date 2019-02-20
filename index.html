@@ -18,12 +18,24 @@
                 name: "Ray",
                 age: 35
             }
-
+            handleClick(e) {
+                //console.log(e.target)
+                console.log(this.state)
+            }
+            handleMouseOver(e) {
+                console.log(e, e.target, e.pageX)
+            }
+            handleCopy(e) {
+                console.log('Copy event triggered.')
+            }
             render() {
                 return (
                     <div className="app-conent">
                         <h1>Hey, ninjas</h1>
                         <p>My name is: { this.state.name } and I am {this.state.age } years old</p>
+                        <button onClick={this.handleClick}>Click me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become </p>
                     </div>
                 )
             }
