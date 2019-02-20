@@ -18,6 +18,11 @@
                 name: "Ray",
                 age: 35
             }
+            handleChange = (e) => (
+                this.setState({
+                    name: e.target.value
+                })
+            )
             handleClick = (e) => {
                 // console.log(e.target
                 this.setState({
@@ -32,6 +37,10 @@
             handleCopy = (e) => {
                 console.log('Copy event triggered.')
             }
+            handleSubmit = (e) => {
+                e.preventDefault();
+                console.log("form submitted", this.state.name)
+            }
             render() {
                 return (
                     <div className="app-conent">
@@ -40,6 +49,10 @@
                         <button onClick={this.handleClick}>Click me</button>
                         <button onMouseOver={this.handleMouseOver}>Hover me</button>
                         <p onCopy={this.handleCopy}>What we think, we become </p>
+                        <form onSubmit={ this.handleSubmit }>
+                            <input type="test" onChange={ this.handleChange } />
+                            <button>Submit</button>
+                        </form>
                     </div>
                 )
             }
