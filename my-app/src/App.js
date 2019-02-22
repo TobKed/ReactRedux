@@ -10,6 +10,13 @@ class App extends Component {
       {name: "Borixon", age:45, belt: "silver", id: 3}
     ]
   }
+  addNinja = (ninja) => {
+    ninja.id = Math.random();  // should be unique, temporary fix
+    let ninjas = [...this.state.ninjas, ninja]
+    this.setState({
+      ninjas: ninjas
+    })
+  }
 
   render() {
     return (
@@ -17,7 +24,7 @@ class App extends Component {
         <h1>My first React App!</h1>
         <p>Welcome my friend :)</p>
         <Ninjas ninjas={ this.state.ninjas }/>
-        <AddNinja />
+        <AddNinja addNinja={ this.addNinja }/>
       </div>
     );
   }
